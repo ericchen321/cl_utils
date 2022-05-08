@@ -4,23 +4,10 @@
 
 import numpy as np
 import trimesh
-import sys
-# import torch
 from sklearn.neighbors import NearestNeighbors
+from utils import scale_to_unit_sphere
 import argparse
 
-
-def scale_to_unit_sphere(mesh):
-        if isinstance(mesh, trimesh.Scene):
-            mesh = mesh.dump().sum()
-        vertices = mesh.vertices - mesh.bounding_box.centroid
-        distances = np.linalg.norm(vertices, axis=1)
-        vertices /= np.max(distances)
-        if isinstance(mesh, trimesh.PointCloud):
-            # if the shape is a point cloud, put in vertices only
-            return trimesh.PointCloud(vertices=vertices)
-        else:
-            return trimesh.Trimesh(vertices=vertices, faces=mesh.faces)
 
 def sample_points_from_shape(shape_in_path, num_pts):
     mesh = trimesh.load(shape_in_path)
@@ -51,6 +38,9 @@ if __name__ == '__main__':
     parser.add_argument(
         '--num_pts', type=int, default=1000000
     )
+    parser.add_argument(
+        '--square_dist', action='store_true', default=False, help='square distance or not'
+    )
     args = parser.parse_args()
 
     if args.pred_shape_input != '':
@@ -70,5 +60,8 @@ if __name__ == '__main__':
         min_y_to_x = x_nn.kneighbors(gt_samples)[0]
         y_nn = NearestNeighbors(n_neighbors=1, leaf_size=1, algorithm='kd_tree', metric=args.metric).fit(gt_samples)
         min_x_to_y = y_nn.kneighbors(pred_samples)[0]
-        cdist = np.mean(min_y_to_x) + np.mean(min_x_to_y)
+        if args.square_dist:
+            cdist = np.mean(np.square(min_y_to_x)) + np.mean(np.square(min_x_to_y))
+        else:
+            cdist = np.mean(min_y_to_x) + np.mean(min_x_to_y)
         print("Chamfer distance: {}".format(cdist))
