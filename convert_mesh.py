@@ -8,12 +8,14 @@ import os
 
 
 def get_converted_filename(filename_src):
-    filename_root = os.path.splitext(filename_src)
+    filename_root, ext = os.path.splitext(filename_src)
     filename_dst = None
-    if "obj" in filename_src:
+    if ext == ".obj":
         filename_dst = filename_root + ".ply"
-    elif "ply" in filename_src:
-        filename_dst = filename_root + ".src"
+    elif ext == ".ply":
+        filename_dst = filename_root + ".obj"
+    else:
+        raise NotImplementedError
     return filename_dst
 
 
