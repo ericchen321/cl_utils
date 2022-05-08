@@ -16,12 +16,7 @@ def sample_points_from_shape(shape_in_path, num_pts):
     num_verts = mesh.vertices.shape[0]
     num_pts = min(num_pts, num_verts)
     print(f"sampling {num_pts} points from shape {shape_in_path}")
-    if isinstance(mesh, trimesh.PointCloud):
-        # if pc, sample manually
-        sampled_ids = np.random.choice(num_verts, size=num_pts, replace=False)
-        samples = mesh.vertices[sampled_ids, :]
-    else:
-        samples = mesh.sample(num_pts) # Sample a subset of points for computation
+    samples = mesh.sample(num_pts) # Sample a subset of points for computation
     return samples, mesh
 
 

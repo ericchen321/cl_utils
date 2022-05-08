@@ -27,9 +27,8 @@ if __name__ == '__main__':
         mesh = scale_to_unit_sphere(mesh)
 
     # sample a subset of points
-    num_samples = min(args.num_pts, mesh.vertices.shape[0])
-    samples, fid  = mesh.sample(num_samples, return_index=True)
-    print(f"sampled {num_samples} points from {args.mesh_input}")
+    samples, fid  = mesh.sample(args.num_pts, return_index=True)
+    print(f"sampled {args.num_pts} points from {args.mesh_input}")
     
     # compute the barycentric coordinates of each sample
     bary = trimesh.triangles.points_to_barycentric(triangles=mesh.triangles[fid], points=samples)
