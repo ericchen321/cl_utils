@@ -5,7 +5,7 @@
 import trimesh
 import argparse
 import os
-from utils import scale_to_unit_sphere
+from utils.utils import scale_to_unit_sphere
 
 
 if __name__ == '__main__':

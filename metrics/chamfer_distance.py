@@ -5,7 +5,7 @@
 import numpy as np
 import trimesh
 from sklearn.neighbors import NearestNeighbors
-from utils import scale_to_unit_sphere
+from utils.utils import scale_to_unit_sphere
 import argparse
 
 

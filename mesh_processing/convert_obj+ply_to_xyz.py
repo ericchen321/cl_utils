@@ -3,7 +3,7 @@
 import numpy as np
 import trimesh
 import argparse
-from utils import scale_to_unit_sphere
+from utils.utils import scale_to_unit_sphere
 
 
 if __name__ == '__main__':
