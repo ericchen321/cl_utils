@@ -1,9 +1,14 @@
+# cache/util folders
 __pycache__/
 .DS_Store
 
+# images
 *.png
 *.jpg
 
+# visualization data, etc.
 visualization/ellipsoids/ldif/gaps
-
 visualization/ellipsoids/shapes/
+
+# metrics results
+metrics/results/
