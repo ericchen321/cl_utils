@@ -1,0 +1,25 @@
+loss_paths:
+- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/losses/k=1.csv"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/losses/k=4.csv"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/losses/k=8.csv"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/losses/k=12.csv"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/losses/k=16.csv"
+
+exp_names:
+- "K=1"
+- "K=4"
+- "K=8"
+- "K=12"
+- "K=16"
+
+width: 1200
+height: 800
+
+max_num_steps: 60001
+
+loss_min: 0.030
+loss_max: 0.042
+
+smooth: 0.5
+
+show_labels: True

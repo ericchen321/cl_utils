@@ -1,0 +1,42 @@
+img_paths:
+- "/media/cs533r/data_b/zhijie/AB_test_nips/pri_num/images/patch_pos=968+201_size=300+200_gt.jpg"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/pri_num/images/patch_pos=968+201_size=300+200_5.jpg"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/pri_num/images/patch_pos=968+201_size=300+200_4.jpg"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/pri_num/images/patch_pos=968+201_size=300+200_3.jpg"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/pri_num/images/patch_pos=968+201_size=300+200_2.jpg"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/pri_num/images/patch_pos=968+201_size=300+200_1.jpg"
+
+"exp_names":
+- "GT"
+- "1316"
+- "5000"
+- "13400"
+- "21600"
+- "25088"
+
+"hparam_name": "Num. Primitives"
+"hparams":
+- 1316
+- 5000
+- 13400
+- 21600
+- 25088
+
+"plot_type": "scatter"
+
+"x_max": 30000
+"y_min_psnr": 18.5
+"y_max_psnr": 20.0
+"y_min_ssim": 0.525
+"y_max_ssim": 0.7
+
+"color_psnr": "firebrick"
+"color_ssim": "midnightblue"
+
+"show_x_label": True
+"show_y_label": False
+
+"width": 1800
+"height": 2000
+
+"plot_filepath": "num_prims_small_metrics_scatter.png"

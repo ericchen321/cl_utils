@@ -1,0 +1,35 @@
+img_paths:
+- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/patch_pos=329+158_size=130+130_gt.jpg"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/patch_pos=329+158_size=130+130_k=1.jpg"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/patch_pos=329+158_size=130+130_k=4.jpg"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/patch_pos=329+158_size=130+130_k=8.jpg"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/patch_pos=329+158_size=130+130_k=12.jpg"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/patch_pos=329+158_size=130+130_k=16.jpg"
+
+"exp_names":
+- "GT"
+- "k=1"
+- "k=4"
+- "k=8"
+- "k=12"
+- "k=16"
+
+"hparam_name": "K"
+"hparams":
+- 1
+- 4
+- 8
+- 12
+- 16
+
+"plot_type": "bar"
+
+"width": 1000
+"height": 1800
+ 
+"y_min_psnr": 22.6
+"y_max_psnr": 23.1
+"y_min_ssim": 0.66
+"y_max_ssim": 0.72
+
+"plot_filepath": "knn_small_metrics_bar.png"

@@ -1,0 +1,31 @@
+img_paths:
+- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/gt.jpg"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/k=1.jpg"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/k=4.jpg"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/k=8.jpg"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/k=12.jpg"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/k=16.jpg"
+
+"exp_names":
+- "GT"
+- "K=1"
+- "K=4"
+- "K=8"
+- "K=12"
+- "K=16"
+
+"hparam_name": "K"
+
+"hparams":
+- 1
+- 4
+- 8
+- 12
+- 16
+
+"plot_type": "bar"
+
+"width": 1000
+"height": 1800
+
+"plot_filepath": "knn_full_metrics.png"
