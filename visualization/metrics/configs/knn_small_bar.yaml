@@ -1,18 +1,18 @@
 img_paths:
-- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/patch_pos=329+158_size=130+130_gt.jpg"
-- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/patch_pos=329+158_size=130+130_k=1.jpg"
-- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/patch_pos=329+158_size=130+130_k=4.jpg"
-- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/patch_pos=329+158_size=130+130_k=8.jpg"
-- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/patch_pos=329+158_size=130+130_k=12.jpg"
-- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/patch_pos=329+158_size=130+130_k=16.jpg"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/patch_pos=354+361_size=300+200_gt.jpg"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/patch_pos=354+361_size=300+200_k=1.jpg"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/patch_pos=354+361_size=300+200_k=4.jpg"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/patch_pos=354+361_size=300+200_k=8.jpg"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/patch_pos=354+361_size=300+200_k=12.jpg"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/patch_pos=354+361_size=300+200_k=16.jpg"
 
 "exp_names":
 - "GT"
-- "k=1"
-- "k=4"
-- "k=8"
-- "k=12"
-- "k=16"
+- "K=1"
+- "K=4"
+- "K=8"
+- "K=12"
+- "K=16"
 
 "hparam_name": "K"
 "hparams":
@@ -24,12 +24,20 @@ img_paths:
 
 "plot_type": "bar"
 
-"width": 1000
-"height": 1800
- 
-"y_min_psnr": 22.6
-"y_max_psnr": 23.1
-"y_min_ssim": 0.66
-"y_max_ssim": 0.72
+"x_max": 20
+"y_min_psnr": 21.0
+"y_max_psnr": 21.4
+"y_min_ssim": 0.590
+"y_max_ssim": 0.650
+
+"bar_width": 0.8
+"color_psnr": "firebrick"
+"color_ssim": "midnightblue"
+
+"show_x_label": True
+"show_y_label": False
+
+"width": 1800
+"height": 2000
 
 "plot_filepath": "knn_small_metrics_bar.png"

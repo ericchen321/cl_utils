@@ -6,11 +6,11 @@ loss_paths:
 - "/media/cs533r/data_b/zhijie/AB_test_nips/pri_num/losses/5_1536.csv"
 
 exp_names:
-- "25088"
-- "21600"
-- "13400"
+- "25000"
+- "22000"
+- "13000"
 - "5000"
-- "1536"
+- "1300"
 
 width: 1400
 height: 1200

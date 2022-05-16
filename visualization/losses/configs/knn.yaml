@@ -12,8 +12,8 @@ exp_names:
 - "K=12"
 - "K=16"
 
-width: 1200
-height: 800
+width: 1400
+height: 1200
 
 max_num_steps: 60001
 
@@ -22,4 +22,4 @@ loss_max: 0.042
 
 smooth: 0.5
 
-show_labels: True
+show_labels: False

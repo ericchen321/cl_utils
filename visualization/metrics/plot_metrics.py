@@ -70,7 +70,7 @@ if __name__=='__main__':
         # add x ticks
         for metric_id in range(2):
             axes[metric_id].set_xticks(pred_ids)
-            axes[metric_id].set_xticklabels(config["exp_names"][1:])
+            axes[metric_id].set_xticklabels(config["hparams"])
 
         # add x labels
         if config["show_x_label"]:
@@ -115,8 +115,8 @@ if __name__=='__main__':
 
         # add point labels
         for i, hparam in enumerate(config["hparams"]):
-            axes[0].annotate(f"{psnrs[i]: .1f}", (hparam, psnrs[i]))
-            axes[1].annotate(f"{ssims[i]: .3f}", (hparam, ssims[i]))
+            axes[0].annotate(f"{psnrs[i]: .2f}", (hparam, psnrs[i]))
+            axes[1].annotate(f"{ssims[i]: .4f}", (hparam, ssims[i]))
         for metric_id in range(2):
             axes[metric_id].set_xlim(right=config["x_max"])
             if metric_id == 0:
@@ -138,5 +138,5 @@ if __name__=='__main__':
     else:
         raise NotImplementedError
     
-    fig.savefig(config["plot_filepath"])
+    fig.savefig(f"visualization/metrics/plots/{config['plot_filepath']}")
     
