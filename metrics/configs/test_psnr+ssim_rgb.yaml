@@ -6,4 +6,4 @@ img_paths:
 - "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/k=12.jpg"
 - "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/k=16.jpg"
 
-csv_filename: "test_psnr+ssim.csv"
+csv_filename: "test_psnr+ssim_rgb.csv"

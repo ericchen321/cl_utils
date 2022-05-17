@@ -1,6 +1,7 @@
 # Author: Guanxiong
 # Compute PSNR + SSIM of given images and save results
 # to metrics/results/
+# NOTE: first image in config file must be the ground truth!
 
 import argparse
 import csv
@@ -29,7 +30,10 @@ if __name__=='__main__':
         for img_path in config["img_paths"][1:]:
             im_pred_arr = np.array(Image.open(img_path))
             psnr = peak_signal_noise_ratio(im_gt_arr, im_pred_arr)
-            ssim = structural_similarity(im_gt_arr, im_pred_arr, multichannel=True)        
+            if len(im_pred_arr.shape) == 3:
+                ssim = structural_similarity(im_gt_arr, im_pred_arr, multichannel=True)
+            else:
+                ssim = structural_similarity(im_gt_arr, im_pred_arr, multichannel=False)
             resultwriter = csv.writer(result_file, delimiter=',')
             resultwriter.writerow([img_path, f"{psnr}", f"{ssim}"])
     print(f"PSNR and SSIM written to metrics/results/{config['csv_filename']}")
