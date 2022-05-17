@@ -1,10 +1,10 @@
 img_paths:
-- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/patch_pos=354+361_size=300+200_gt.jpg"
-- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/patch_pos=354+361_size=300+200_k=1.jpg"
-- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/patch_pos=354+361_size=300+200_k=4.jpg"
-- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/patch_pos=354+361_size=300+200_k=8.jpg"
-- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/patch_pos=354+361_size=300+200_k=12.jpg"
-- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/patch_pos=354+361_size=300+200_k=16.jpg"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/patch_pos=354+361_size=300+200_gt.png"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/patch_pos=354+361_size=300+200_k=1.png"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/patch_pos=354+361_size=300+200_k=4.png"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/patch_pos=354+361_size=300+200_k=8.png"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/patch_pos=354+361_size=300+200_k=12.png"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/patch_pos=354+361_size=300+200_k=16.png"
 
 "exp_names":
 - "GT"
@@ -34,7 +34,7 @@ img_paths:
 "color_psnr": "firebrick"
 "color_ssim": "midnightblue"
 
-"show_x_label": True
+"show_x_label": False
 "show_y_label": False
 
 "width": 1800

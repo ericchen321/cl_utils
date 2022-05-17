@@ -36,7 +36,7 @@ if __name__=='__main__':
     matplotlib.rcParams['figure.dpi'] = 300
     dpi = matplotlib.rcParams['figure.dpi']
     figsize = config["width"] / float(dpi), config["height"] / float(dpi)
-    fig, axes = plt.subplots(nrows=2, ncols=1, figsize=figsize, sharex=True)    
+    fig, axes = plt.subplots(nrows=1, ncols=2, figsize=figsize, sharex=True)    
 
     if config["plot_type"] == "bar":
         # implmentation from
@@ -63,6 +63,9 @@ if __name__=='__main__':
         pred_ids = np.arange(len(config["img_paths"])-1)
         axes[0].bar(pred_ids, psnrs, color=config["color_psnr"], width=bar_width)
         axes[1].bar(pred_ids, ssims, color=config["color_ssim"], width=bar_width)
+        
+        axes[1].yaxis.tick_right()
+        
         if config["show_y_label"]:
             axes[0].set_ylabel("PSNR")
             axes[1].set_ylabel("SSIM")
@@ -74,7 +77,7 @@ if __name__=='__main__':
 
         # add x labels
         if config["show_x_label"]:
-            axes[1].set_xlabel(config["hparam_name"])
+            fig.text(0.5, 0.02, config["hparam_name"], ha='center', va='center')
         
         # add bar labels
         for metric_id in range(2):
@@ -91,7 +94,7 @@ if __name__=='__main__':
                         top=config["y_max_ssim"])
 
         plt.subplots_adjust(
-            top = 0.95, bottom = 0.08, right = 0.95, left = 0.1, hspace = 0.05, wspace = 0)
+            top = 0.95, bottom = 0.07, right = 0.92, left = 0.1, hspace = 0.05, wspace = 0.02)
     
     elif config["plot_type"] == "scatter":
         # plot and add y labels
@@ -132,7 +135,7 @@ if __name__=='__main__':
         if config["show_x_label"]:
             axes[1].set_xlabel(config["hparam_name"])
         
-        plt.subplots_adjust(
+        fig.subplots_adjust(
             top = 0.95, bottom = 0.08, right = 0.95, left = 0.1, hspace = 0.02, wspace = 0)
     
     else:

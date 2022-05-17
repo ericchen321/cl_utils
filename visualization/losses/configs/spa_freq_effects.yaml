@@ -1,0 +1,25 @@
+loss_paths:
+- "/media/cs533r/data_b/zhijie/AB_test_nips/spa_freq_effects/losses/full_model.csv"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/spa_freq_effects/losses/no_affine_relu-based.csv"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/spa_freq_effects/losses/relu-based.csv"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/spa_freq_effects/losses/sin-based.csv"
+
+exp_names:
+- "Ours: Full Model"
+- "Ours: LS Layer removed"
+- "Ours: SIREN removed"
+- "SIREN"
+
+width: 1300
+height: 1400
+
+max_num_steps: 45001
+
+loss_min: 0.01
+loss_max: 0.2
+
+smooth: 0.5
+
+show_labels: False
+
+legend_location: "upper right"

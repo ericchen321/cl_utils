@@ -1,10 +1,10 @@
 img_paths:
-- "/media/cs533r/data_b/zhijie/AB_test_nips/pri_num/images/patch_pos=968+201_size=300+200_gt.jpg"
-- "/media/cs533r/data_b/zhijie/AB_test_nips/pri_num/images/patch_pos=968+201_size=300+200_5.jpg"
-- "/media/cs533r/data_b/zhijie/AB_test_nips/pri_num/images/patch_pos=968+201_size=300+200_4.jpg"
-- "/media/cs533r/data_b/zhijie/AB_test_nips/pri_num/images/patch_pos=968+201_size=300+200_3.jpg"
-- "/media/cs533r/data_b/zhijie/AB_test_nips/pri_num/images/patch_pos=968+201_size=300+200_2.jpg"
-- "/media/cs533r/data_b/zhijie/AB_test_nips/pri_num/images/patch_pos=968+201_size=300+200_1.jpg"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/pri_num/images/patch_pos=968+201_size=300+200_gt.png"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/pri_num/images/patch_pos=968+201_size=300+200_5_1316.png"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/pri_num/images/patch_pos=968+201_size=300+200_4_5000.png"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/pri_num/images/patch_pos=968+201_size=300+200_3_13400.png"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/pri_num/images/patch_pos=968+201_size=300+200_2_21600.png"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/pri_num/images/patch_pos=968+201_size=300+200_1_25088.png"
 
 "exp_names":
 - "GT"
@@ -16,11 +16,11 @@ img_paths:
 
 "hparam_name": "Num. Primitives"
 "hparams":
-- 1300
-- 5000
-- 13000
-- 22000
-- 25000
+- "1.3k"
+- "5k"
+- "13k"
+- "22k"
+- "25k"
 
 "plot_type": "bar"
 
@@ -34,7 +34,7 @@ img_paths:
 "color_psnr": "firebrick"
 "color_ssim": "midnightblue"
 
-"show_x_label": True
+"show_x_label": False
 "show_y_label": False
 
 "width": 1800

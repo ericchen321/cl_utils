@@ -89,7 +89,7 @@ if __name__=='__main__':
         plt.xlim(0, config["max_num_steps"])
     plt.ylim(config["loss_min"], config["loss_max"])
 
-    plt.legend(config["exp_names"], loc="lower left")
+    plt.legend(config["exp_names"], loc=config["legend_location"])
 
     if config["show_labels"]:
         plt.xlabel("Step")
@@ -99,6 +99,6 @@ if __name__=='__main__':
 
     fig_name = "losses_"
     for exp_name in config["exp_names"]:
-        fig_name += f"+{exp_name}"
+        fig_name += f"+{exp_name.replace(' ', '_')}"
     fig.savefig(f"visualization/losses/plots/{fig_name}.png")
     plt.close(fig)
