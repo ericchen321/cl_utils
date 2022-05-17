@@ -80,12 +80,12 @@ if __name__=='__main__':
         for metric_id in range(2):
             for bars in axes[metric_id].containers:
                 if metric_id == 0:
-                    axes[metric_id].bar_label(bars, fmt='%.1f')
+                    axes[metric_id].bar_label(bars, fmt='%.2f')
                     axes[metric_id].set_ylim(
                         bottom=config["y_min_psnr"],
                         top=config["y_max_psnr"])
                 else:
-                    axes[metric_id].bar_label(bars, fmt='%.3f')
+                    axes[metric_id].bar_label(bars, fmt='%.4f')
                     axes[metric_id].set_ylim(
                         bottom=config["y_min_ssim"],
                         top=config["y_max_ssim"])
