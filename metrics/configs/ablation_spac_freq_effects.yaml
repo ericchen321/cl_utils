@@ -1,0 +1,8 @@
+img_paths:
+- "/media/cs533r/data_b/zhijie/AB_test_nips/spa_freq_effects/images/patch_pos=518+202_size=500+500_gt.png"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/spa_freq_effects/images/patch_pos=518+202_size=500+500_full_model.png"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/spa_freq_effects/images/patch_pos=518+202_size=500+500_no_affine_relu-based.png"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/spa_freq_effects/images/patch_pos=518+202_size=500+500_relu-based.png"
+- "/media/cs533r/data_b/zhijie/AB_test_nips/spa_freq_effects/images/patch_pos=518+202_size=500+500_sin-based.png"
+
+csv_filename: "ablation_spac_freq_effects.csv"
