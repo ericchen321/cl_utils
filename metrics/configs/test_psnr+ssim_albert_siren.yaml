@@ -1,0 +1,4 @@
+img_paths:
+- "/media/cs533r/data_b/533R_results_1/2d_images/albert/reference.jpg"
+- "/media/cs533r/data_b/siren_results/2d/albert_pred_111000.png"
+csv_filename: "test_psnr+ssim_albert_siren.csv"

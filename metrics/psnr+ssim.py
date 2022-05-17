@@ -29,7 +29,13 @@ if __name__=='__main__':
     with open(f"metrics/results/{config['csv_filename']}", 'w', newline='') as result_file:
         for img_path in config["img_paths"][1:]:
             im_pred_arr = np.array(Image.open(img_path))
-            psnr = peak_signal_noise_ratio(im_gt_arr, im_pred_arr)
+            if len(im_pred_arr.shape) == 3 and len(im_gt_arr.shape) == 2:
+                # handle the particular case where the GT image contains one channel
+                # but the predicted contains three
+                im_pred_arr = im_pred_arr[:, :, 0]
+                psnr = peak_signal_noise_ratio(im_gt_arr, im_pred_arr)
+            else:
+                psnr = peak_signal_noise_ratio(im_gt_arr, im_pred_arr)
             if len(im_pred_arr.shape) == 3:
                 ssim = structural_similarity(im_gt_arr, im_pred_arr, multichannel=True)
             else:
