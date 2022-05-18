@@ -1,7 +1,10 @@
-# Author: Chunjin Song
-# Note: larger IoU leads to more accurate result, but is slower
+# Author: Chunjin, Guanxiong
+# NOTE: larger IoU leads to more accurate result, but is slower
 # to compute
 
+import argparse
+import csv
+import yaml
 import numpy as np
 import open3d as o3d
 from joblib import Parallel, delayed
@@ -25,58 +28,36 @@ def iou_pymesh(mesh_src, mesh_pred, scale):
 
     intersection = np.sum(np.logical_and(v1, v2))
     union = np.sum(np.logical_or(v1, v2))
-    print(float(intersection) / union, mesh_pred)
-    return [float(intersection) / union, mesh_pred]
+    return float(intersection) / union
 
 
-mesh_src = './normalized_shapes/bimba_gt_normalized.ply'
-mesh_pred1 = './normalized_shapes/bimba_instantngp_normalized.ply'
-mesh_pred2 = './normalized_shapes/bimba_lslayer_normalized.ply'
-mesh_pred3 = './normalized_shapes/bimba_FFN_normalized.ply'
+if __name__=='__main__':  
+    p = argparse.ArgumentParser()
+    p.add_argument('--config', type=str, help='path to yaml config file', required=True)
+    args = p.parse_args()
 
+    config = None
+    with open(args.config, "r") as stream:
+        try:
+            config = yaml.safe_load(stream)
+        except yaml.YAMLError as exc:
+            print(exc)
 
-src_path_lst = [mesh_src, mesh_src, mesh_src]
-pred_path_lst = [mesh_pred1, mesh_pred2, mesh_pred3]
-scale = 1
-scales = [scale, scale, scale]
-with Parallel(n_jobs=20) as parallel:
-    result_lst = parallel(delayed(iou_pymesh)
-                             (src_path, pred_path, scale)
-                             for src_path, pred_path, scale in
-                             zip(src_path_lst, pred_path_lst, scales))
+    meshpath_gt = config["mesh_paths"][0]
+    out_dir = 'metrics/results/'
+    meshpaths_gt = len(config["mesh_paths"][1:]) * [meshpath_gt]
+    meshpaths_pred = config["mesh_paths"][1:]
+    scale = int(config["scale"])
+    scales = len(config["mesh_paths"][1:]) * [scale]
+    with Parallel(n_jobs=20) as parallel:
+        results = parallel(delayed(iou_pymesh)
+            (src_path, pred_path, scale)
+            for src_path, pred_path, scale in
+            zip(meshpaths_gt, meshpaths_pred, scales))
 
-for result in result_lst:
-    print(result[0], result[1])
-
-# iou_vals = np.asarray([result[0] for result in result_lst], dtype=np.float32)
-# iou_pred = [result[1] for result in result_lst]
-# print(iou_vals)
-# print(iou_pred)
-
-
-# def iou_pymesh(mesh_src, mesh_pred, dim=FLAGS.dim):
-#     try:
-#         mesh1 = pymesh.load_mesh(mesh_src)
-#         grid1 = pymesh.VoxelGrid(2./dim)
-#         grid1.insert_mesh(mesh1)
-#         grid1.create_grid()
-#
-#         ind1 = ((grid1.mesh.vertices + 1.1) / 2.4 * dim).astype(np.int)
-#         v1 = np.zeros([dim, dim, dim])
-#         v1[ind1[:,0], ind1[:,1], ind1[:,2]] = 1
-#
-#
-#         mesh2 = pymesh.load_mesh(mesh_pred)
-#         grid2 = pymesh.VoxelGrid(2./dim)
-#         grid2.insert_mesh(mesh2)
-#         grid2.create_grid()
-#
-#         ind2 = ((grid2.mesh.vertices + 1.1) / 2.4 * dim).astype(np.int)
-#         v2 = np.zeros([dim, dim, dim])
-#         v2[ind2[:,0], ind2[:,1], ind2[:,2]] = 1
-#
-#         intersection = np.sum(np.logical_and(v1, v2))
-#         union = np.sum(np.logical_or(v1, v2))
-#         return [float(intersection) / union, mesh_pred]
-#     except:
-#         print("error mesh {} / {}".format(mesh_src, mesh_pred))
+    result_filepath = f"metrics/results/iou_{config['experiment_name']}.csv"
+    with open(result_filepath, 'w', newline='') as result_file:
+        resultwriter = csv.writer(result_file, delimiter=',')
+        for meshpth, result in zip(config["mesh_paths"][1:], results):
+            resultwriter.writerow([meshpth, result])
+    print(f"IoU written to {result_filepath}")
