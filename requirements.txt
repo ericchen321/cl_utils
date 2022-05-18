@@ -10,3 +10,4 @@ PyYAML==6.0
 open3d==0.15.2
 pyrender==0.1.45
 opencv-python==4.5.5.64
+seaborn==0.11.2
