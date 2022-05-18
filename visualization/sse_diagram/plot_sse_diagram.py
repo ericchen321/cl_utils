@@ -103,7 +103,7 @@ if __name__=='__main__':
     else:
         fig, ax = setup_fig(img_size, 1.2*img_size)
     hmap = sses / np.amax(np.abs(sses))
-    ax = sns.heatmap(hmap)
+    ax = sns.heatmap(hmap, cmap="YlGnBu")
     ax.axis('off')
     if config["show_title"]:
         fig.suptitle(f"Per {neighborhood_size}x{neighborhood_size} Neighborhood SSE")
