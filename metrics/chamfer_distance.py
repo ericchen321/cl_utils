@@ -6,6 +6,8 @@ import numpy as np
 import trimesh
 from sklearn.neighbors import NearestNeighbors
 from utils.utils import scale_to_unit_sphere
+import csv
+import yaml
 import argparse
 
 
@@ -15,54 +17,50 @@ def sample_points_from_shape(mesh, num_pts):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        '--pred_shape_input', type=str, default='')
-    parser.add_argument(
-        '--gt_shape_input', type=str, default='')
-    parser.add_argument(
-        '--pred_shape_norm_output', type=str, default='')
-    parser.add_argument(
-        '--gt_shape_norm_output', type=str, default='')
-    parser.add_argument(
-        '--metric', type=str, default='l2')
-    parser.add_argument(
-        '--num_pts', type=int, default=1000000, help='number of points to sample for computing CD'
-    )
-    parser.add_argument(
-        '--square_dist', action='store_true', default=False, help='square distance or not'
-    )
-    args = parser.parse_args()
+    p = argparse.ArgumentParser()
+    p.add_argument('--config', type=str, help='path to yaml config file', required=True)
+    args = p.parse_args()
 
-    pred_mesh, pred_samples, gt_mesh, gt_samples = None, None, None, None
-    if args.pred_shape_input != '':
-        # Load the mesh
-        pred_mesh = trimesh.load(args.pred_shape_input)
+    config = None
+    with open(args.config, "r") as stream:
+        try:
+            config = yaml.safe_load(stream)
+        except yaml.YAMLError as exc:
+            print(exc)
+
+    # Load the GT mesh
+    gt_mesh = trimesh.load(config["mesh_paths"][0])
+    # Normalize
+    gt_mesh = scale_to_unit_sphere(gt_mesh)
+    # Sample
+    gt_samples, gt_mesh = sample_points_from_shape(gt_mesh, config["num_points_to_sample"])
+
+    cdists = []
+    for meshpath_pred in config["mesh_paths"][1:]:
+        # Load each predicted mesh
+        pred_mesh = trimesh.load(meshpath_pred)
         # Normalize
         pred_mesh = scale_to_unit_sphere(pred_mesh)
-        # Output normalized shape
-        if args.pred_shape_norm_output !='':
-            pred_mesh.export(args.pred_shape_norm_output)
         # Sample
-        pred_samples, pred_mesh = sample_points_from_shape(pred_mesh, args.num_pts)
-    if args.gt_shape_input != '':
-        # Load the mesh
-        gt_mesh = trimesh.load(args.gt_shape_input)
-        # Normalize
-        gt_mesh = scale_to_unit_sphere(gt_mesh)
-        if args.gt_shape_norm_output != '':
-            gt_mesh.export(args.gt_shape_norm_output)
-        # Sample
-        gt_samples, gt_mesh = sample_points_from_shape(gt_mesh, args.num_pts)
+        pred_samples, pred_mesh = sample_points_from_shape(pred_mesh, config["num_points_to_sample"])
 
-    # Compute Chamfer
-    if (args.pred_shape_input != '' and args.gt_shape_input != ''):
-        x_nn = NearestNeighbors(n_neighbors=1, leaf_size=1, algorithm='kd_tree', metric=args.metric).fit(pred_samples)
+        # Compute Chamfer
+        x_nn = NearestNeighbors(
+            n_neighbors=1, leaf_size=1, algorithm='kd_tree', metric=config["metric"]).fit(pred_samples)
         min_y_to_x = x_nn.kneighbors(gt_samples)[0]
-        y_nn = NearestNeighbors(n_neighbors=1, leaf_size=1, algorithm='kd_tree', metric=args.metric).fit(gt_samples)
+        y_nn = NearestNeighbors(
+            n_neighbors=1, leaf_size=1, algorithm='kd_tree', metric=config["metric"]).fit(gt_samples)
         min_x_to_y = y_nn.kneighbors(pred_samples)[0]
-        if args.square_dist:
+        cdist = -1
+        if config["square_distances"]:
             cdist = np.mean(np.square(min_y_to_x)) + np.mean(np.square(min_x_to_y))
         else:
             cdist = np.mean(min_y_to_x) + np.mean(min_x_to_y)
-        print("Chamfer distance: {}".format(cdist))
+        cdists.append(cdist)
+
+    result_filepath = f"metrics/results/chamfer_distance_{config['experiment_name']}.csv"
+    with open(result_filepath, 'w', newline='') as result_file:
+        resultwriter = csv.writer(result_file, delimiter=',')
+        for meshpath_pred, cdist in zip(config["mesh_paths"][1:], cdists):
+            resultwriter.writerow([meshpath_pred, cdist])
+    print(f"Chamfer distances written to {result_filepath}")
