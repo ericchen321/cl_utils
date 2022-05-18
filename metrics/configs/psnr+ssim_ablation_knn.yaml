@@ -6,4 +6,4 @@ img_paths:
 - "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/patch_pos=354+361_size=300+200_k=12.png"
 - "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/patch_pos=354+361_size=300+200_k=16.png"
 
-csv_filename: "ablation_knn.csv"
+csv_filename: "ablation_knn"

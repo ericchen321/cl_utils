@@ -5,4 +5,4 @@ img_paths:
 - "/media/cs533r/data_b/zhijie/AB_test_nips/affine_tests/images/patch_pos=960+30_size=200+200_no_rotation.png"
 - "/media/cs533r/data_b/zhijie/AB_test_nips/affine_tests/images/patch_pos=960+30_size=200+200_no_scale.png"
 
-csv_filename: "ablation_affine_tests.csv"
+csv_filename: "ablation_affine_tests"

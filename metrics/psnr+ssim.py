@@ -26,7 +26,8 @@ if __name__=='__main__':
     img_path_gt = config["img_paths"][0]
     im_gt_arr = np.array(Image.open(img_path_gt))
 
-    with open(f"metrics/results/{config['csv_filename']}", 'w', newline='') as result_file:
+    result_filename = f"metrics/results/psnr+ssim_{config['experiment_name']}.csv"
+    with open(result_filename, 'w', newline='') as result_file:
         resultwriter = csv.writer(result_file, delimiter=',')
         for img_path in config["img_paths"][1:]:
             im_pred_arr = np.array(Image.open(img_path))
@@ -42,4 +43,4 @@ if __name__=='__main__':
             else:
                 ssim = structural_similarity(im_gt_arr, im_pred_arr, multichannel=False)
             resultwriter.writerow([img_path, f"{psnr}", f"{ssim}"])
-    print(f"PSNR and SSIM written to metrics/results/{config['csv_filename']}")
+    print(f"PSNR and SSIM written to {result_filename}")
