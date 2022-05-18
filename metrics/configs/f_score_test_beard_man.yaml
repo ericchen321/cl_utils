@@ -1,0 +1,10 @@
+mesh_paths:
+- "/media/cs533r/data_b/Figure_1_to_5/fig_3d_comparison/beard_man/normalized/beard_man.ply"
+- "/media/cs533r/data_b/bacon_results/3d/outputs_multiscale_normalized_256/bacon_beard_man_multiscale_4.obj"
+
+experiment_name: "test"
+
+cube_side_length: 1.0
+
+cube_side_factors:
+- 2000
