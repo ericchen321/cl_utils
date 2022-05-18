@@ -1,0 +1,8 @@
+mesh_paths:
+- "/media/cs533r/data_b/Figure_1_to_5/fig_3d_comparison/bimba/bimba_gt_normalized.ply"
+- "/media/cs533r/data_b/Figure_1_to_5/fig_3d_comparison/bimba/bimba_instantngp_normalized.ply"
+- "/media/cs533r/data_b/Figure_1_to_5/fig_3d_comparison/bimba/bimba_lslayer_normalized.ply"
+
+experiment_name: "test"
+
+scale: 1.0
