@@ -8,6 +8,8 @@ experiment_name: "test_cd"
 
 metric: "l2"
 
+normalize: False
+
 num_points_to_sample: 1000000
 
 square_distances: False

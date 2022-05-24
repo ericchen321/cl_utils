@@ -40,7 +40,8 @@ if __name__ == '__main__':
         # Load each predicted mesh
         pred_mesh = trimesh.load(meshpath_pred)
         # Normalize
-        pred_mesh = scale_to_unit_sphere(pred_mesh)
+        if config["normalize"]:
+            pred_mesh = scale_to_unit_sphere(pred_mesh)
         # Sample
         pred_samples, pred_mesh = sample_points_from_shape(pred_mesh, config["num_points_to_sample"])
 

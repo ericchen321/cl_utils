@@ -1,0 +1,14 @@
+mesh_paths:
+- "/media/eric/data_a/cpsc533r/data_b_2022_05_20_14_36/normalized_GT_3D_shapes/ply/dragon_warrior.ply"
+- "/home/eric/cpsc533r/project/ldif/results_dragon_warrior/meshes/test/dragon_warrior/dragon_warrior.ply"
+- "/home/eric/cpsc533r/project/scratch/ldif_dragon_warrior_normed.ply"
+
+experiment_name: "chamfer_distance_ldif_dw"
+
+metric: "l2"
+
+normalize: False
+
+num_points_to_sample: 100000
+
+square_distances: True
