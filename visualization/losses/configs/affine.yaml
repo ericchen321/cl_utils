@@ -1,14 +1,10 @@
 loss_paths:
 - "/media/cs533r/data_b/zhijie/AB_test_nips/affine_tests/losses/full_model.csv"
-- "/media/cs533r/data_b/zhijie/AB_test_nips/affine_tests/losses/no_pos.csv"
-- "/media/cs533r/data_b/zhijie/AB_test_nips/affine_tests/losses/no_rotation.csv"
 - "/media/cs533r/data_b/zhijie/AB_test_nips/affine_tests/losses/no_scale.csv"
 
 exp_names:
 - "Full LS Layer"
-- "LS Layer: Position Untrainable"
-- "LS Layer: Rotation Untrainable"
-- "LS Layer: Scale Untrainable"
+- "LS Layer: No Affine Transforms"
 
 width: 1300
 height: 1400
