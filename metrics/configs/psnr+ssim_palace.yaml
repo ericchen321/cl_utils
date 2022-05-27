@@ -1,0 +1,9 @@
+img_paths:
+- "/media/cs533r/data_b/new_images/palace/palace.jpg"
+- "/media/cs533r/data_b/533R_results_1/2d_images/results/results_ngp/result_palace.jpg"
+- "/media/cs533r/data_b/533R_results_1/2d_images/results/results_freq/result_palace.jpg"
+- "/media/cs533r/data_b/533R_results_1/2d_images/results/results_lslayer/result_palace.jpg"
+
+experiment_name: "palace_ngp+ffn+lslayer"
+
+grayscale: False

@@ -8,5 +8,6 @@ experiment_name: "test"
 
 cube_side_length: 1.0
 
-cube_side_factors:
-- 200
+cube_side_factor: 200
+
+normalize: True

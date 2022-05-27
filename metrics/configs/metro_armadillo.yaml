@@ -1,0 +1,15 @@
+mesh_paths:
+- "/media/cs533r/data_b/normalized_GT_3D_shapes/obj/armadillo.obj"
+- "/media/cs533r/data_b/533R_results_1/3d_shapes/instantngp/armadillo_base.obj"
+- "/media/cs533r/data_b/533R_results_1/3d_shapes/ldif/armadillo.ply"
+- "/media/cs533r/data_b/533R_results_1/3d_shapes/FFN/armadillo.ply"
+- "/media/cs533r/data_b/533R_results_1/3d_shapes/siren/armadillo.ply"
+- "/media/cs533r/data_b/533R_results_1/3d_shapes/bacon/bacon_armadillo_multiscale_4.obj"
+- "/media/cs533r/data_b/533R_results_1/3d_shapes/sape/armadillo_1024.ply"
+- "/media/cs533r/data_b/533R_results_1/3d_shapes/lslayer/armadillo_2022-05-26-04-02-26_1024_result.ply"
+
+experiment_name: "armadillo"
+
+num_samples: 100000
+
+normalize: True

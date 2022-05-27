@@ -1,0 +1,20 @@
+mesh_paths:
+- "/media/cs533r/data_b/normalized_GT_3D_shapes/obj/bimba.obj"
+- "/media/cs533r/data_b/533R_results_1/3d_shapes/instantngp/bimba_hashgrid.obj"
+- "/media/cs533r/data_b/533R_results_1/3d_shapes/ldif/bimba.ply"
+- "/media/cs533r/data_b/533R_results_1/3d_shapes/FFN/bimba.ply"
+- "/media/cs533r/data_b/533R_results_1/3d_shapes/siren/bimba.ply"
+- "/media/cs533r/data_b/533R_results_1/3d_shapes/bacon/bacon_bimba_multiscale_4.obj"
+- "/media/cs533r/data_b/533R_results_1/3d_shapes/sape/bimba_1024.ply"
+- "/media/cs533r/data_b/533R_results_1/3d_shapes/lslayer/bimba_2022-05-26-03-43-03_1024_result.ply"
+
+experiment_name: "bimba"
+
+metric: "l2"
+
+#normalize: False
+normalize: True
+
+num_points_to_sample: 100000
+
+square_distances: False

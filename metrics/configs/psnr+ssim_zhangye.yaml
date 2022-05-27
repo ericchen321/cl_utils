@@ -1,0 +1,9 @@
+img_paths:
+- "/media/cs533r/data_b/new_images/zhangye/zhangye.jpg"
+- "/media/cs533r/data_b/533R_results_1/2d_images/results/results_ngp/result_zhangye.jpg"
+- "/media/cs533r/data_b/533R_results_1/2d_images/results/results_freq/result_zhangye.jpg"
+- "/media/cs533r/data_b/533R_results_1/2d_images/lslayer_new/result_zhangye.jpg"
+
+experiment_name: "zhangye_ngp+ffn+lslayer"
+
+grayscale: False

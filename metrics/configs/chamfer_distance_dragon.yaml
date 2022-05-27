@@ -1,0 +1,20 @@
+mesh_paths:
+- "/media/cs533r/data_b/normalized_GT_3D_shapes/obj/dragon.obj"
+- "/media/cs533r/data_b/533R_results_1/3d_shapes/instantngp/dragon_hashgrid.obj"
+- "/media/cs533r/data_b/533R_results_1/3d_shapes/ldif/dragon.ply"
+- "/media/cs533r/data_b/533R_results_1/3d_shapes/FFN/dragon.ply"
+- "/media/cs533r/data_b/533R_results_1/3d_shapes/siren/dragon.ply"
+- "/media/cs533r/data_b/533R_results_1/3d_shapes/bacon/bacon_dragon_multiscale_4.obj"
+- "/media/cs533r/data_b/533R_results_1/3d_shapes/sape/dragon_1024.ply"
+- "/media/cs533r/data_b/533R_results_1/3d_shapes/lslayer/dragon_2022-05-26-04-02-26_1024_result.ply"
+
+experiment_name: "dragon"
+
+metric: "l2"
+
+#normalize: False
+normalize: True
+
+num_points_to_sample: 100000
+
+square_distances: False

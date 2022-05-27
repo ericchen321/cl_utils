@@ -1,0 +1,9 @@
+img_paths:
+- "/media/cs533r/data_b/new_images/pyramids/pyramids.jpg"
+- "/media/cs533r/data_b/533R_results_1/2d_images/results/results_ngp/result_pyramids.jpg"
+- "/media/cs533r/data_b/533R_results_1/2d_images/results/results_freq/result_pyramids.jpg"
+- "/media/cs533r/data_b/533R_results_1/2d_images/results/results_lslayer/result_pyramids.jpg"
+
+experiment_name: "pyramids_ngp+ffn+lslayer"
+
+grayscale: False
