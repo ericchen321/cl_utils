@@ -7,9 +7,12 @@ import yaml
 import os, typing
 import open3d as o3d
 import numpy as np
+import csv
+from utils.utils import scale_to_unit_sphere
 
 
-def calculate_fscore(gt: o3d.geometry.PointCloud, pr: o3d.geometry.PointCloud, th: float = 0.01) -> typing.Tuple[
+def calculate_fscore(
+    gt: o3d.geometry.PointCloud, pr: o3d.geometry.PointCloud, th: float = 0.01) -> typing.Tuple[
     float, float, float]:
     '''Calculates the F-score between two point clouds with the corresponding threshold value.'''
     d1 = gt.compute_point_cloud_distance(pr)
@@ -44,46 +47,35 @@ if __name__=='__main__':
             print(exc)
 
     meshpath_gt = config["mesh_paths"][0]
-    out_dir = 'metrics/results/'
 
-    cube_side_length = config["cube_side_length"]
-    threshold_list = []
-    for cube_side_factor in config["cube_side_factors"]:
-        threshold_list.append(cube_side_length / cube_side_factor)
+    threshold = config["cube_side_length"] / config["cube_side_factor"]
 
     o3d.utility.set_verbosity_level(o3d.utility.VerbosityLevel.Error)
 
+    out_dir = 'metrics/results/'
     os.makedirs(out_dir, exist_ok=True)
-    f_f = open(os.path.join(out_dir, f"fscore_fscore_{config['experiment_name']}.txt"), "w")
-    f_p = open(os.path.join(out_dir, f"fscore_precision_{config['experiment_name']}.txt"), "w")
-    f_r = open(os.path.join(out_dir, f"fscore_recall_{config['experiment_name']}.txt"), "w")
-    
-    for meshpath_pred in config["mesh_paths"][1:]:
-        gt = np.asarray(o3d.io.read_triangle_mesh(meshpath_gt).vertices)
-        pr = np.asarray(o3d.io.read_triangle_mesh(meshpath_pred).vertices)
+    result_filepath = f"{out_dir}/f_score_{config['experiment_name']}.csv"
+    with open(result_filepath, 'w', newline='') as result_file:
+        resultwriter = csv.writer(result_file, delimiter=',')
 
-        pcd_gt = o3d.geometry.PointCloud()
-        pcd_gt.points = o3d.utility.Vector3dVector(gt)
+        for meshpath_pred in config["mesh_paths"][1:]:
+            mesh_gt = o3d.io.read_triangle_mesh(meshpath_gt)
+            mesh_pred = o3d.io.read_triangle_mesh(meshpath_pred)
 
-        pcd_pr = o3d.geometry.PointCloud()
-        pcd_pr.points = o3d.utility.Vector3dVector(pr)
+            # normalize if needed
+            if config["normalize"]:
+                mesh_gt = scale_to_unit_sphere(mesh_gt)
+                mesh_pred = scale_to_unit_sphere(mesh_pred)
 
-        f_f.write(" " + str(meshpath_pred) + "\n")
-        f_p.write(" " + str(meshpath_pred) + "\n")
-        f_r.write(" " + str(meshpath_pred) + "\n")
+            gt = np.asarray(mesh_gt.vertices)
+            pr = np.asarray(mesh_pred.vertices)
 
-        for th in threshold_list:
-            f, p, r = calculate_fscore(pcd_gt, pcd_pr, th=th)
-            print(meshpath_pred, f'fscore: {str(f)}, precision: {str(p)}, recall: {str(r)}')
+            pcd_gt = o3d.geometry.PointCloud()
+            pcd_gt.points = o3d.utility.Vector3dVector(gt)
 
-            f_f.write(" " + str(f)  + "\n")
-            f_p.write(" " + str(p) + "\n")
-            f_r.write(" " + str(r) + "\n")
+            pcd_pr = o3d.geometry.PointCloud()
+            pcd_pr.points = o3d.utility.Vector3dVector(pr)
 
-        f_f.write("\n")
-        f_p.write("\n")
-        f_r.write("\n")
-
-    f_f.close()
-    f_p.close()
-    f_r.close()
+            f_score, precision, recall = calculate_fscore(pcd_gt, pcd_pr, th=threshold)
+            resultwriter.writerow([meshpath_pred, f_score, precision, recall])
+    print(f"F Score, Precision, Recall written to {result_filepath}")
