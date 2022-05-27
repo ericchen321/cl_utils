@@ -37,6 +37,21 @@ def iou_pymesh(meshpath_gt, meshpath_pred, scale, normalize):
     return float(intersection) / union
 
 
+def compute_ious(config):
+    meshpath_gt = config["mesh_paths"][0]
+    meshpaths_gt = len(config["mesh_paths"][1:]) * [meshpath_gt]
+    meshpaths_pred = config["mesh_paths"][1:]
+    scale = int(config["scale"])
+    scales = len(config["mesh_paths"][1:]) * [scale]
+    normalize_list = len(config["mesh_paths"][1:]) * [config["normalize"]]
+    with Parallel(n_jobs=20) as parallel:
+        ious = parallel(delayed(iou_pymesh)
+            (meshpath_gt, meshpath_pred, scale, normalize)
+            for meshpath_gt, meshpath_pred, scale, normalize in
+            zip(meshpaths_gt, meshpaths_pred, scales, normalize_list))
+    return ious
+
+
 if __name__=='__main__':  
     p = argparse.ArgumentParser()
     p.add_argument('--config', type=str, help='path to yaml config file', required=True)
@@ -49,23 +64,13 @@ if __name__=='__main__':
         except yaml.YAMLError as exc:
             print(exc)
 
-    meshpath_gt = config["mesh_paths"][0]
-    meshpaths_gt = len(config["mesh_paths"][1:]) * [meshpath_gt]
-    meshpaths_pred = config["mesh_paths"][1:]
-    scale = int(config["scale"])
-    scales = len(config["mesh_paths"][1:]) * [scale]
-    normalize_list = len(config["mesh_paths"][1:]) * [config["normalize"]]
-    with Parallel(n_jobs=20) as parallel:
-        results = parallel(delayed(iou_pymesh)
-            (meshpath_gt, meshpath_pred, scale, normalize)
-            for meshpath_gt, meshpath_pred, scale, normalize in
-            zip(meshpaths_gt, meshpaths_pred, scales, normalize_list))
+    ious = compute_ious(config)
 
     out_dir = 'metrics/results/'
     os.makedirs(out_dir, exist_ok=True)
     result_filepath = f"{out_dir}/iou_{config['experiment_name']}.csv"
     with open(result_filepath, 'w', newline='') as result_file:
         resultwriter = csv.writer(result_file, delimiter=',')
-        for meshpth, result in zip(config["mesh_paths"][1:], results):
-            resultwriter.writerow([meshpth, result])
+        for meshpth, iou in zip(config["mesh_paths"][1:], ious):
+            resultwriter.writerow([meshpth, iou])
     print(f"IoU written to {result_filepath}")

@@ -16,18 +16,7 @@ def sample_points_from_shape(mesh, num_pts):
     return samples, mesh
 
 
-if __name__ == '__main__':
-    p = argparse.ArgumentParser()
-    p.add_argument('--config', type=str, help='path to yaml config file', required=True)
-    args = p.parse_args()
-
-    config = None
-    with open(args.config, "r") as stream:
-        try:
-            config = yaml.safe_load(stream)
-        except yaml.YAMLError as exc:
-            print(exc)
-
+def compute_chamfers(config):
     # Load the GT mesh
     gt_mesh = trimesh.load(config["mesh_paths"][0])
     # Normalize
@@ -58,6 +47,22 @@ if __name__ == '__main__':
         else:
             cdist = np.mean(min_y_to_x) + np.mean(min_x_to_y)
         cdists.append(cdist)
+    return cdists
+
+
+if __name__ == '__main__':
+    p = argparse.ArgumentParser()
+    p.add_argument('--config', type=str, help='path to yaml config file', required=True)
+    args = p.parse_args()
+
+    config = None
+    with open(args.config, "r") as stream:
+        try:
+            config = yaml.safe_load(stream)
+        except yaml.YAMLError as exc:
+            print(exc)
+
+    cdists = compute_chamfers(config)
 
     result_filepath = f"metrics/results/chamfer_distance_{config['experiment_name']}.csv"
     with open(result_filepath, 'w', newline='') as result_file:
