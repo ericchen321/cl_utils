@@ -8,13 +8,8 @@ mesh_paths:
 - "/media/cs533r/data_b/533R_results_1/3d_shapes/sape/armadillo_1024.ply"
 - "/media/cs533r/data_b/533R_results_1/3d_shapes/lslayer/armadillo_2022-05-26-04-02-26_1024_result.ply"
 
-experiment_name: "armadillo"
+experiment_name: "test"
 
-metric: "l2"
+num_samples: 100000
 
-#normalize: False
 normalize: True
-
-num_points_to_sample: 100000
-
-square_distances: False

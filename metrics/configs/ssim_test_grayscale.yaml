@@ -1,0 +1,7 @@
+img_paths:
+- "/media/cs533r/data_b/533R_results_1/2d_images/albert/reference.jpg"
+- "/media/cs533r/data_b/533R_results_1/2d_images/albert/sape_albert_4k.png"
+
+experiment_name: "test_grayscale"
+
+grayscale: True

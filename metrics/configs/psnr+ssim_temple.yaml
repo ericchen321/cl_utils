@@ -1,9 +1,0 @@
-img_paths:
-- "/media/cs533r/data_b/new_images/temple/temple.jpg"
-- "/media/cs533r/data_b/533R_results_1/2d_images/results/results_ngp/result_temple.jpg"
-- "/media/cs533r/data_b/533R_results_1/2d_images/results/results_freq/result_temple.jpg"
-- "/media/cs533r/data_b/533R_results_1/2d_images/results/results_lslayer/result_temple.jpg"
-
-experiment_name: "temple_ngp+ffn+lslayer"
-
-grayscale: False

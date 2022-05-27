@@ -1,7 +1,7 @@
 mesh_paths:
-- "/media/cs533r/data_b/figures_and_tables/fig_3d_comparison/bimba/bimba_gt_normalized.ply"
-- "/media/cs533r/data_b/figures_and_tables/fig_3d_comparison/bimba/bimba_instantngp_normalized.ply"
-- "/media/cs533r/data_b/figures_and_tables/fig_3d_comparison/bimba/bimba_lslayer_normalized.ply"
+- "/media/cs533r/data_b/normalized_GT_3D_shapes/obj/armadillo.obj"
+- "/media/cs533r/data_b/533R_results_1/3d_shapes/instantngp/armadillo_base.obj"
+- "/media/cs533r/data_b/533R_results_1/3d_shapes/ldif/armadillo.ply"
 
 experiment_name: "test"
 

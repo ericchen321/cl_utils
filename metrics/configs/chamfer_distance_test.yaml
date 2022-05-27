@@ -1,15 +1,14 @@
 mesh_paths:
-- "/media/cs533r/data_b/Figure_1_to_5/fig_3d_comparison/beard_man/normalized/beard_man_gt.ply"
-- "/media/cs533r/data_b/bacon_results/3d/outputs_multiscale_normalized_256/bacon_beard_man_multiscale_4.obj"
-- "/media/cs533r/data_b/Figure_1_to_5/fig_3d_comparison/beard_man/normalized/sape_256.obj"
-- "/media/cs533r/data_b/Figure_1_to_5/fig_3d_comparison/beard_man/normalized/siren_256.ply"
+- "/media/cs533r/data_b/normalized_GT_3D_shapes/obj/armadillo.obj"
+- "/media/cs533r/data_b/533R_results_1/3d_shapes/instantngp/armadillo_base.obj"
+- "/media/cs533r/data_b/533R_results_1/3d_shapes/ldif/armadillo.ply"
 
-experiment_name: "test_cd"
+experiment_name: "test"
 
 metric: "l2"
 
-normalize: False
+normalize: True
 
-num_points_to_sample: 1000000
+num_points_to_sample: 100000
 
 square_distances: False

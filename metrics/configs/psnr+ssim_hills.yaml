@@ -1,9 +1,0 @@
-img_paths:
-- "/media/cs533r/data_b/new_images/hills/hills.jpg"
-- "/media/cs533r/data_b/533R_results_1/2d_images/results/results_ngp/result_hills.jpg"
-- "/media/cs533r/data_b/533R_results_1/2d_images/results/results_freq/result_hills.jpg"
-- "/media/cs533r/data_b/533R_results_1/2d_images/lslayer_new/result_hills.jpg"
-
-experiment_name: "hills_ngp+ffn+lslayer"
-
-grayscale: False

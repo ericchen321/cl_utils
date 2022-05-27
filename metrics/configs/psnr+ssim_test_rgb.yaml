@@ -1,9 +1,0 @@
-img_paths:
-- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/gt.jpg"
-- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/k=1.jpg"
-- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/k=4.jpg"
-- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/k=8.jpg"
-- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/k=12.jpg"
-- "/media/cs533r/data_b/zhijie/AB_test_nips/knn/images/k=16.jpg"
-
-experiment_name: "test_rgb"
