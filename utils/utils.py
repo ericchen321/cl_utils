@@ -1,9 +1,6 @@
 import trimesh
 import open3d as o3d
 import numpy as np
-from PIL import Image
-from skimage.metrics import peak_signal_noise_ratio
-from skimage.metrics import structural_similarity
 
 
 def scale_to_unit_sphere(mesh):
@@ -54,45 +51,7 @@ def get_image_paths_and_specs(config):
     return img_paths_gt, img_paths_pred_dict, grayscales
 
 
-def compute_metric_2d(img_paths_gt, img_paths_pred_dict, grayscales, metric_name):
-    metrics = {}
-    
-    # set metric function
-    metric_fn = None
-    if metric_name == "psnr":
-        metric_fn = peak_signal_noise_ratio
-    elif metric_name == "ssim":
-        metric_fn = structural_similarity
-    else:
-        raise NotImplementedError
-
-    for baseline, img_paths_pred in img_paths_pred_dict.items():
-        # initialize metrics as empty lists
-        metrics[baseline] = []
-
-        # for each baseline, compute metric for all images
-        for img_path_gt, img_path_pred, is_gs in zip(
-            img_paths_gt, img_paths_pred, grayscales):
-            # for each gt-pred pair, compute the metric
-            im_gt_arr = np.array(Image.open(img_path_gt))
-            im_pred_arr = np.array(Image.open(img_path_pred))
-            metric = None
-            if is_gs:
-                if len(im_gt_arr.shape) == 3:
-                    im_gt_arr = im_gt_arr[:, :, 0]
-                if len(im_pred_arr.shape) == 3:
-                    im_pred_arr = im_pred_arr[:, :, 0]
-                if metric_name == "psnr":
-                    metric = metric_fn(im_gt_arr, im_pred_arr)
-                else:
-                    metric = metric_fn(im_gt_arr, im_pred_arr, multichannel=False)
-            else:
-                im_gt_arr = im_gt_arr[:, :, :3]
-                im_pred_arr = im_pred_arr[:, :, :3]
-                if metric_name == "psnr":
-                    metric = metric_fn(im_gt_arr, im_pred_arr)
-                else:
-                    metric = metric_fn(im_gt_arr, im_pred_arr, multichannel=True)
-            metrics[baseline].append(metric)
-    
-    return metrics
+def get_mesh_paths(config):
+    mesh_paths_gt = config["gt_mesh_paths"]
+    mesh_paths_pred_dict = config["pred_mesh_paths"]
+    return mesh_paths_gt, mesh_paths_pred_dict

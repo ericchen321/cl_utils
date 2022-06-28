@@ -5,7 +5,8 @@
 import argparse
 import csv
 import yaml
-from utils.utils import get_image_paths_and_specs, compute_metric_2d
+from utils.utils import get_image_paths_and_specs
+from metrics.img import compute_metric_2d
 
 
 if __name__=='__main__':  
