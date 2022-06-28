@@ -1,7 +1,0 @@
-img_paths:
-- "/media/cs533r/data_b/new_images/hurricane/hurricane.jpg"
-- "/media/cs533r/data_b/533R_results_1/2d_images/results/results_ngp/result_hurricane.jpg"
-
-experiment_name: "test_rgb"
-
-grayscale: False
