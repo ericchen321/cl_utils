@@ -1,0 +1,7 @@
+img_paths:
+- "/media/cs533r/data_b/data/2d/mexico_city.jpg"
+- "/media/eric/data_a/cpsc533r/bacon_results+trained_models/2022_06_28/bacon_mexico_city_monoscale/summaries/imgs/im_100000.png"
+
+experiment_name: "bacon_mexico_city_monoscale"
+
+grayscale: False
