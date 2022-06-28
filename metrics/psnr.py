@@ -1,42 +1,11 @@
 # Author: Guanxiong
 # Compute PSNR of given images and save results
 # to metrics/results/
-# NOTE: first image in config file must be the ground truth!
 
 import argparse
 import csv
 import yaml
-from PIL import Image
-import numpy as np
-from skimage import io
-from skimage.metrics import peak_signal_noise_ratio
-
-
-def compute_psnrs(config):
-    img_paths_gt = config["gt_img_paths"]
-    img_paths_pred = config["pred_img_paths"]
-    grayscales = config["grayscales"]
-
-    psnrs = []
-    for img_path_gt, img_path_pred, is_gs in zip(
-        img_paths_gt, img_paths_pred, grayscales):
-        # for each gt-pred pair, compute psnr
-        im_gt_arr = np.array(Image.open(img_path_gt))
-        im_pred_arr = np.array(Image.open(img_path_pred))
-        psnr = None
-        if is_gs:
-            if len(im_gt_arr.shape) == 3:
-                im_gt_arr = im_gt_arr[:, :, 0]
-            if len(im_pred_arr.shape) == 3:
-                im_pred_arr = im_pred_arr[:, :, 0]
-            psnr = peak_signal_noise_ratio(im_gt_arr, im_pred_arr)
-        else:
-            im_gt_arr = im_gt_arr[:, :, :3]
-            im_pred_arr = im_pred_arr[:, :, :3]
-            psnr = peak_signal_noise_ratio(im_gt_arr, im_pred_arr)
-        psnrs.append(psnr)
-    
-    return psnrs
+from utils.utils import get_image_paths_and_specs, compute_metric_2d
 
 
 if __name__=='__main__':  
@@ -51,12 +20,16 @@ if __name__=='__main__':
         except yaml.YAMLError as exc:
             print(exc)
 
-    psnrs = compute_psnrs(config)
+    img_paths_gt, img_paths_pred_dict, grayscales = get_image_paths_and_specs(config)
+    metric_name = "psnr"
+    metrics_dict = compute_metric_2d(img_paths_gt, img_paths_pred_dict, grayscales, metric_name)
 
-    result_filename = f"metrics/results/psnr_{config['experiment_name']}.csv"
+    result_filename = f"metrics/results/{metric_name}_{config['experiment_name']}.csv"
     with open(result_filename, 'w', newline='') as result_file:
         resultwriter = csv.writer(result_file, delimiter=',')
-        for imgpath_pred, psnr in zip(
-            config["pred_img_paths"], psnrs):
-            resultwriter.writerow([imgpath_pred, psnr])
-    print(f"PSNR written to {result_filename}")
+        resultwriter.writerow(["baseline", "predicted image path", metric_name])
+        for baseline, metrics in metrics_dict.items():
+            for img_path_pred, psnr in zip(
+                img_paths_pred_dict[baseline], metrics):
+                resultwriter.writerow([baseline, img_path_pred, psnr])
+    print(f"{metric_name} written to {result_filename}")

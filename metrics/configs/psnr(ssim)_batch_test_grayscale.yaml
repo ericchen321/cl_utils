@@ -1,0 +1,17 @@
+gt_img_paths:
+- "/media/cs533r/data_b/533R_results_1/2d_images/albert/reference.jpg"
+- "/media/cs533r/data_b/data/2d/hills.jpg"
+
+pred_img_paths:
+  sape:
+    - "/media/cs533r/data_b/533R_results_1/2d_images/albert/sape_albert_4k.png"
+    - "/media/cs533r/data_b/533R_results_1/2d_images/hills/sape.png"
+  bacon:
+    - "/media/cs533r/data_b/533R_results_1/2d_images/albert/bacon.png"
+    - "/media/cs533r/data_b/533R_results_1/2d_images/hills/bacon.png"
+
+experiment_name: "batch_test_grayscale"
+
+grayscales:
+- True
+- False
