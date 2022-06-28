@@ -1,4 +1,4 @@
-# Author: Xindong, Guanxiong
+# Author: Guanxiong
 
 import csv
 import yaml

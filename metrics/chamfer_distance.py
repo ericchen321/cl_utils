@@ -1,4 +1,4 @@
-# Authors: Zhijie, Guanxiong
+# Authors: Guanxiong
 # Generate normalized predicted/GT meshes;
 # Compute Chamfer distance
 

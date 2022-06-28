@@ -1,4 +1,4 @@
-# Author: Chunjin, Guanxiong
+# Author: Guanxiong
 # Note: for the threshold, we're using values used in other papers,
 # but we might want to pick a different one
 

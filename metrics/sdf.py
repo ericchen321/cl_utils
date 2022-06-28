@@ -1,4 +1,4 @@
-# Author: Chunjin, Guanxiong
+# Author: Chunjin, Xindong, Zhijie, Guanxiong
 # Compute 3D metrics and write to csv file
 # NOTE: first image in config file must be the ground truth!
 

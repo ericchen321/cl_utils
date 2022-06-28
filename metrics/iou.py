@@ -1,4 +1,4 @@
-# Author: Chunjin, Guanxiong
+# Author: Guanxiong
 # NOTE: larger IoU leads to more accurate result, but is slower
 # to compute
 
