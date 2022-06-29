@@ -111,7 +111,7 @@ def compute_f_score(mesh_path_gt, mesh_path_pred, config):
     return fscore
 
 
-def iou_pymesh(mesh_path_gt, mesh_path_pred, scale, normalize):
+def compute_iou(mesh_path_gt, mesh_path_pred, scale, normalize):
     mesh_gt = o3d.io.read_triangle_mesh(mesh_path_gt)
     if normalize:
         mesh_gt = scale_to_unit_sphere(mesh_gt)
@@ -164,7 +164,7 @@ def compute_metric_3d(mesh_paths_gt, mesh_paths_pred_dict, metric_name, config):
             normalize_list = len(mesh_paths_pred) * [config["normalize"]]
 
             with Parallel(n_jobs=20) as parallel:
-                ious = parallel(delayed(iou_pymesh)
+                ious = parallel(delayed(compute_iou)
                     (mesh_path_gt, mesh_path_pred, scale, normalize)
                     for mesh_path_gt, mesh_path_pred, scale, normalize in
                     zip(mesh_paths_gt, mesh_paths_pred, scales, normalize_list))
