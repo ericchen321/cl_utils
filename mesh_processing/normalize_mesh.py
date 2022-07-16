@@ -3,33 +3,25 @@
 # Save to another dir
 
 import trimesh
+import yaml
 import argparse
-import os
 from utils.utils import scale_to_unit_sphere
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        '--in_dir', type=str, default='')
-    parser.add_argument(
-        '--out_dir', type=str, default='')
-    parser.add_argument(
-        '--in_mesh', type=str, default='')
-    parser.add_argument(
-        '--out_mesh', type=str, default='')
-    args = parser.parse_args()
+    p = argparse.ArgumentParser()
+    p.add_argument('--config', type=str, help='path to yaml config file', required=True)
+    args = p.parse_args()
 
-    if args.in_dir != "" and args.out_dir != "":
-        for filename in os.listdir(f"{args.in_dir}/"):
-            if filename.endswith((".obj", ".ply")):
-                print(f"Normalizing {args.in_dir}/{filename}, output to {args.out_dir}/{filename}")
-                mesh = trimesh.load(f"{args.in_dir}/{filename}")
-                unit_mesh = scale_to_unit_sphere(mesh)
-                unit_mesh.export(f"{args.out_dir}/{filename}")
-            else:
-                continue
-    elif args.in_mesh != "" and args.out_mesh != "":
-        mesh = trimesh.load(args.in_mesh)
+    config = None
+    with open(args.config, "r") as stream:
+        try:
+            config = yaml.safe_load(stream)
+        except yaml.YAMLError as exc:
+            print(exc)
+
+    for mesh_in_path, mesh_out_path in zip(config["mesh_in_paths"], config["mesh_out_paths"]):
+        mesh = trimesh.load(mesh_in_path)
         unit_mesh = scale_to_unit_sphere(mesh)
-        unit_mesh.export(args.out_mesh)
+        unit_mesh.export(mesh_out_path)
+        print(f"Normalized {mesh_in_path}, saved to {mesh_out_path}")
