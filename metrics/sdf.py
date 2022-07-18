@@ -206,7 +206,7 @@ if __name__ == '__main__':
     result_filepath = f"metrics/results/sdf_{config['experiment_name']}.csv"
     with open(result_filepath, 'w', newline='') as result_file:
         resultwriter = csv.writer(result_file, delimiter=',')
-        resultwriter.writerow(["baseline", "predicted image path"] + metric_names)
+        resultwriter.writerow(["baseline", "predicted mesh path"] + metric_names)
         for baseline, metrics in metrics_dict.items():
             # for each baseline, write all metrics
             for mesh_path_pred, cd, metro, f_score, iou in zip(
