@@ -1,0 +1,71 @@
+gt_img_paths:
+- "/media/cs533r/data_b/data/2d/bath.jpg"
+- "/media/cs533r/data_b/data/2d/copenhagen.jpg"
+- "/media/cs533r/data_b/data/2d/hamburg.jpg"
+- "/media/cs533r/data_b/data/2d/hiroshima.jpg"
+- "/media/cs533r/data_b/data/2d/iss.jpg"
+- "/media/cs533r/data_b/data/2d/kangxi.jpg"
+- "/media/cs533r/data_b/data/2d/lake_valhalla.jpg"
+- "/media/cs533r/data_b/data/2d/lanting_xu.jpg"
+- "/media/cs533r/data_b/data/2d/mexico_city.jpg"
+- "/media/cs533r/data_b/data/2d/requiem.jpg"
+- "/media/cs533r/data_b/data/2d/steeds_full.jpg"
+- "/media/cs533r/data_b/data/2d/summer.jpg"
+- "/media/cs533r/data_b/data/2d/suzhou_a.jpg"
+- "/media/cs533r/data_b/data/2d/suzhou_b.jpg"
+- "/media/cs533r/data_b/data/2d/suzhou_c.jpg"
+- "/media/cs533r/data_b/data/2d/suzhou_d.jpg"
+- "/media/cs533r/data_b/data/2d/suzhou_e.jpg"
+- "/media/cs533r/data_b/data/2d/tenby.jpg"
+- "/media/cs533r/data_b/data/2d/tibet.jpg"
+- "/media/cs533r/data_b/data/2d/tokyo.jpg"
+- "/media/cs533r/data_b/data/2d/wang.jpg"
+
+pred_img_paths:
+  instant-ngp:
+  - "/media/cs533r/data_b/instant-ngp_results/2d/default/bath_31000.png"
+  - "/media/cs533r/data_b/instant-ngp_results/2d/default/copenhagen_31000.png"
+  - "/media/cs533r/data_b/instant-ngp_results/2d/default/hamburg_31000.png"
+  - "/media/cs533r/data_b/instant-ngp_results/2d/default/hiroshima_31000.png"
+  - "/media/cs533r/data_b/instant-ngp_results/2d/default/iss_31000.png"
+  - "/media/cs533r/data_b/instant-ngp_results/2d/default/kangxi_31000.png"
+  - "/media/cs533r/data_b/instant-ngp_results/2d/default/lake_valhalla_31000.png"
+  - "/media/cs533r/data_b/instant-ngp_results/2d/default/lanting_xu_31000.png"
+  - "/media/cs533r/data_b/instant-ngp_results/2d/default/mexico_city_31000.png"
+  - "/media/cs533r/data_b/instant-ngp_results/2d/default/requiem_31000.png"
+  - "/media/cs533r/data_b/instant-ngp_results/2d/default/steeds_full_31000.png"
+  - "/media/cs533r/data_b/instant-ngp_results/2d/default/summer_31000.png"
+  - "/media/cs533r/data_b/instant-ngp_results/2d/default/suzhou_a_31000.png"
+  - "/media/cs533r/data_b/instant-ngp_results/2d/default/suzhou_b_31000.png"
+  - "/media/cs533r/data_b/instant-ngp_results/2d/default/suzhou_c_31000.png"
+  - "/media/cs533r/data_b/instant-ngp_results/2d/default/suzhou_d_31000.png"
+  - "/media/cs533r/data_b/instant-ngp_results/2d/default/suzhou_e_31000.png"
+  - "/media/cs533r/data_b/instant-ngp_results/2d/default/tenby_31000.png"
+  - "/media/cs533r/data_b/instant-ngp_results/2d/default/tibet_31000.png"
+  - "/media/cs533r/data_b/instant-ngp_results/2d/default/tokyo_31000.png"
+  - "/media/cs533r/data_b/instant-ngp_results/2d/default/wang_31000.png"
+
+experiment_name: "instant-ngp"
+
+grayscales:
+- False
+- False
+- False
+- False
+- False
+- False
+- False
+- False
+- False
+- False
+- False
+- False
+- False
+- False
+- False
+- False
+- False
+- False
+- False
+- False
+- False
