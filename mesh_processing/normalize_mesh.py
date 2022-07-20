@@ -22,6 +22,10 @@ if __name__ == '__main__':
 
     for mesh_in_path, mesh_out_path in zip(config["mesh_in_paths"], config["mesh_out_paths"]):
         mesh = trimesh.load(mesh_in_path)
-        unit_mesh = scale_to_unit_sphere(mesh)
-        unit_mesh.export(mesh_out_path)
-        print(f"Normalized {mesh_in_path}, saved to {mesh_out_path}")
+        try:
+            unit_mesh = scale_to_unit_sphere(mesh)
+            unit_mesh.export(mesh_out_path)
+        except:
+            print(f"Normalizing {mesh_in_path} failed")
+        else:
+            print(f"Normalized {mesh_in_path}, saved to {mesh_out_path}")

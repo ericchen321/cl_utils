@@ -12,3 +12,6 @@ visualization/ellipsoids/shapes/
 
 # metrics results
 metrics/results/
+
+# mesh processing logs
+mesh_processing/logs/
