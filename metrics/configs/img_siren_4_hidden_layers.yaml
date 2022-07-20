@@ -1,0 +1,71 @@
+gt_img_paths:
+- "/media/cs533r/data_b/data/2d/bath.jpg"
+- "/media/cs533r/data_b/data/2d/copenhagen.jpg"
+- "/media/cs533r/data_b/data/2d/hamburg.jpg"
+- "/media/cs533r/data_b/data/2d/hiroshima.jpg"
+- "/media/cs533r/data_b/data/2d/iss.jpg"
+- "/media/cs533r/data_b/data/2d/kangxi.jpg"
+- "/media/cs533r/data_b/data/2d/lake_valhalla.jpg"
+- "/media/cs533r/data_b/data/2d/lanting_xu.jpg"
+- "/media/cs533r/data_b/data/2d/mexico_city.jpg"
+- "/media/cs533r/data_b/data/2d/requiem.jpg"
+- "/media/cs533r/data_b/data/2d/steeds_full.jpg"
+- "/media/cs533r/data_b/data/2d/summer.jpg"
+- "/media/cs533r/data_b/data/2d/suzhou_a.jpg"
+- "/media/cs533r/data_b/data/2d/suzhou_b.jpg"
+- "/media/cs533r/data_b/data/2d/suzhou_c.jpg"
+- "/media/cs533r/data_b/data/2d/suzhou_d.jpg"
+- "/media/cs533r/data_b/data/2d/suzhou_e.jpg"
+- "/media/cs533r/data_b/data/2d/tenby.jpg"
+- "/media/cs533r/data_b/data/2d/tibet.jpg"
+- "/media/cs533r/data_b/data/2d/tokyo.jpg"
+- "/media/cs533r/data_b/data/2d/wang.jpg"
+
+pred_img_paths:
+  siren_4_hidden_layers:
+  - "/media/cs533r/data_b/siren_results/2d/4_hidden_layers/bath_100000.png"
+  - "/media/cs533r/data_b/siren_results/2d/4_hidden_layers/copenhagen_100000.png"
+  - "/media/cs533r/data_b/siren_results/2d/4_hidden_layers/hamburg_100000.png"
+  - "/media/cs533r/data_b/siren_results/2d/4_hidden_layers/hiroshima_100000.png"
+  - "/media/cs533r/data_b/siren_results/2d/4_hidden_layers/iss_100000.png"
+  - "/media/cs533r/data_b/siren_results/2d/4_hidden_layers/kangxi_100000.png"
+  - "/media/cs533r/data_b/siren_results/2d/4_hidden_layers/lake_valhalla_100000.png"
+  - "/media/cs533r/data_b/siren_results/2d/4_hidden_layers/lanting_xu_100000.png"
+  - "/media/cs533r/data_b/siren_results/2d/4_hidden_layers/mexico_city_100000.png"
+  - "/media/cs533r/data_b/siren_results/2d/4_hidden_layers/requiem_100000.png"
+  - "/media/cs533r/data_b/siren_results/2d/4_hidden_layers/steeds_full_100000.png"
+  - "/media/cs533r/data_b/siren_results/2d/4_hidden_layers/summer_100000.png"
+  - "/media/cs533r/data_b/siren_results/2d/4_hidden_layers/suzhou_a_100000.png"
+  - "/media/cs533r/data_b/siren_results/2d/4_hidden_layers/suzhou_b_100000.png"
+  - "/media/cs533r/data_b/siren_results/2d/4_hidden_layers/suzhou_c_100000.png"
+  - "/media/cs533r/data_b/siren_results/2d/4_hidden_layers/suzhou_d_100000.png"
+  - "/media/cs533r/data_b/siren_results/2d/4_hidden_layers/suzhou_e_100000.png"
+  - "/media/cs533r/data_b/siren_results/2d/4_hidden_layers/tenby_100000.png"
+  - "/media/cs533r/data_b/siren_results/2d/4_hidden_layers/tibet_100000.png"
+  - "/media/cs533r/data_b/siren_results/2d/4_hidden_layers/tokyo_100000.png"
+  - "/media/cs533r/data_b/siren_results/2d/4_hidden_layers/wang_100000.png"
+
+experiment_name: "siren_4_hidden_layers"
+
+grayscales:
+- False
+- False
+- False
+- False
+- False
+- False
+- False
+- False
+- False
+- False
+- False
+- False
+- False
+- False
+- False
+- False
+- False
+- False
+- False
+- False
+- False

@@ -1,5 +1,0 @@
-mesh_in_paths:
-- "/media/eric/data_a/cpsc533r/siren_results+trained_models/2022_07_10/default_thai_statue/test.ply"
-
-mesh_out_paths:
-- "/media/cs533r/data_b/siren_results/3d/default/thai_statue.ply"

@@ -1,0 +1,15 @@
+mesh_in_paths:
+# - "/media/eric/data_a/cpsc533r/siren_results+trained_models/2022_07_10/default_thai_statue/test.ply"
+- "/media/eric/data_a/cpsc533r/siren_results+trained_models/2022_07_18/default_asian_dragon/test.ply"
+- "/media/eric/data_a/cpsc533r/siren_results+trained_models/2022_07_18/default_camera/test.ply"
+- "/media/eric/data_a/cpsc533r/siren_results+trained_models/2022_07_18/default_david/test.ply"
+- "/media/eric/data_a/cpsc533r/siren_results+trained_models/2022_07_18/default_dragon/test.ply"
+- "/media/eric/data_a/cpsc533r/siren_results+trained_models/2022_07_18/default_dragon_warrior/test.ply"
+
+mesh_out_paths:
+# - "/media/cs533r/data_b/siren_results/3d/default/thai_statue.ply"
+- "/media/cs533r/data_b/siren_results/3d/default/asian_dragon.ply"
+- "/media/cs533r/data_b/siren_results/3d/default/camera.ply"
+- "/media/cs533r/data_b/siren_results/3d/default/david.ply"
+- "/media/cs533r/data_b/siren_results/3d/default/dragon.ply"
+- "/media/cs533r/data_b/siren_results/3d/default/dragon_warrior.ply"
