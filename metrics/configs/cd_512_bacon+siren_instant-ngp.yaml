@@ -163,7 +163,7 @@ pred_mesh_paths:
   - "/media/cs533r/data_b/instant-ngp_results/3d/default/512/oak_tree.ply"
   - "/media/cs533r/data_b/instant-ngp_results/3d/default/512/thai_statue.ply"
 
-experiment_name: "bacon+siren+instant-ngp_jul20"
+experiment_name: "512_bacon+siren+instant-ngp_jul20"
 
 metric: "l2"
 
