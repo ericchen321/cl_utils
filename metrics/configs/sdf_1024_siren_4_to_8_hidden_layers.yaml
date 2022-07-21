@@ -1,0 +1,122 @@
+gt_mesh_paths:
+- "/media/cs533r/data_b/data/3d/obj/armadillo.obj"
+- "/media/cs533r/data_b/data/3d/obj/asian_dragon.obj"
+# - "/media/cs533r/data_b/data/3d/obj/at-ot.obj"
+- "/media/cs533r/data_b/data/3d/obj/beard_man.obj"
+- "/media/cs533r/data_b/data/3d/obj/camera.obj"
+- "/media/cs533r/data_b/data/3d/obj/david.obj"
+- "/media/cs533r/data_b/data/3d/obj/dragon.obj"
+- "/media/cs533r/data_b/data/3d/obj/dragon_warrior.obj"
+- "/media/cs533r/data_b/data/3d/obj/engine.obj"
+# - "/media/cs533r/data_b/data/3d/obj/gear_shift.obj"
+- "/media/cs533r/data_b/data/3d/obj/guangong.obj"
+- "/media/cs533r/data_b/data/3d/obj/lion.obj"
+# - "/media/cs533r/data_b/data/3d/obj/lunar_lander.obj"
+# - "/media/cs533r/data_b/data/3d/obj/ninjago_city.obj"
+- "/media/cs533r/data_b/data/3d/obj/oak_tree.obj"
+- "/media/cs533r/data_b/data/3d/obj/thai_statue.obj"
+
+pred_mesh_paths:
+  siren_4_hidden_layers:
+  - "/media/cs533r/data_b/siren_results/3d/4_hidden_layers/1024/armadillo.ply"
+  - "/media/cs533r/data_b/siren_results/3d/4_hidden_layers/1024/asian_dragon.ply"
+#  - "/media/cs533r/data_b/siren_results/3d/4_hidden_layers/1024/at-ot.ply"
+  - "/media/cs533r/data_b/siren_results/3d/4_hidden_layers/1024/beard_man.ply"
+  - "/media/cs533r/data_b/siren_results/3d/4_hidden_layers/1024/camera.ply"
+  - "/media/cs533r/data_b/siren_results/3d/4_hidden_layers/1024/david.ply"
+  - "/media/cs533r/data_b/siren_results/3d/4_hidden_layers/1024/dragon.ply"
+  - "/media/cs533r/data_b/siren_results/3d/4_hidden_layers/1024/dragon_warrior.ply"
+  - "/media/cs533r/data_b/siren_results/3d/4_hidden_layers/1024/engine.ply"
+#  - "/media/cs533r/data_b/siren_results/3d/4_hidden_layers/1024/gear_shift.ply"
+  - "/media/cs533r/data_b/siren_results/3d/4_hidden_layers/1024/guangong.ply"
+  - "/media/cs533r/data_b/siren_results/3d/4_hidden_layers/1024/lion.ply"
+#  - "/media/cs533r/data_b/siren_results/3d/4_hidden_layers/1024/lunar_lander.ply"
+#  - "/media/cs533r/data_b/siren_results/3d/4_hidden_layers/1024/ninjago_city.ply"
+  - "/media/cs533r/data_b/siren_results/3d/4_hidden_layers/1024/oak_tree.ply"
+  - "/media/cs533r/data_b/siren_results/3d/4_hidden_layers/1024/thai_statue.ply"
+  siren_5_hidden_layers:
+  - "/media/cs533r/data_b/siren_results/3d/5_hidden_layers/1024/armadillo.ply"
+  - "/media/cs533r/data_b/siren_results/3d/5_hidden_layers/1024/asian_dragon.ply"
+#  - "/media/cs533r/data_b/siren_results/3d/5_hidden_layers/1024/at-ot.ply"
+  - "/media/cs533r/data_b/siren_results/3d/5_hidden_layers/1024/beard_man.ply"
+  - "/media/cs533r/data_b/siren_results/3d/5_hidden_layers/1024/camera.ply"
+  - "/media/cs533r/data_b/siren_results/3d/5_hidden_layers/1024/david.ply"
+  - "/media/cs533r/data_b/siren_results/3d/5_hidden_layers/1024/dragon.ply"
+  - "/media/cs533r/data_b/siren_results/3d/5_hidden_layers/1024/dragon_warrior.ply"
+  - "/media/cs533r/data_b/siren_results/3d/5_hidden_layers/1024/engine.ply"
+#  - "/media/cs533r/data_b/siren_results/3d/5_hidden_layers/1024/gear_shift.ply"
+  - "/media/cs533r/data_b/siren_results/3d/5_hidden_layers/1024/guangong.ply"
+  - "/media/cs533r/data_b/siren_results/3d/5_hidden_layers/1024/lion.ply"
+#  - "/media/cs533r/data_b/siren_results/3d/5_hidden_layers/1024/lunar_lander.ply"
+#  - "/media/cs533r/data_b/siren_results/3d/5_hidden_layers/1024/ninjago_city.ply"
+  - "/media/cs533r/data_b/siren_results/3d/5_hidden_layers/1024/oak_tree.ply"
+  - "/media/cs533r/data_b/siren_results/3d/5_hidden_layers/1024/thai_statue.ply"
+  siren_6_hidden_layers:
+  - "/media/cs533r/data_b/siren_results/3d/6_hidden_layers/1024/armadillo.ply"
+  - "/media/cs533r/data_b/siren_results/3d/6_hidden_layers/1024/asian_dragon.ply"
+#  - "/media/cs533r/data_b/siren_results/3d/6_hidden_layers/1024/at-ot.ply"
+  - "/media/cs533r/data_b/siren_results/3d/6_hidden_layers/1024/beard_man.ply"
+  - "/media/cs533r/data_b/siren_results/3d/6_hidden_layers/1024/camera.ply"
+  - "/media/cs533r/data_b/siren_results/3d/6_hidden_layers/1024/david.ply"
+  - "/media/cs533r/data_b/siren_results/3d/6_hidden_layers/1024/dragon.ply"
+  - "/media/cs533r/data_b/siren_results/3d/6_hidden_layers/1024/dragon_warrior.ply"
+  - "/media/cs533r/data_b/siren_results/3d/6_hidden_layers/1024/engine.ply"
+#  - "/media/cs533r/data_b/siren_results/3d/6_hidden_layers/1024/gear_shift.ply"
+  - "/media/cs533r/data_b/siren_results/3d/6_hidden_layers/1024/guangong.ply"
+  - "/media/cs533r/data_b/siren_results/3d/6_hidden_layers/1024/lion.ply"
+#  - "/media/cs533r/data_b/siren_results/3d/6_hidden_layers/1024/lunar_lander.ply"
+#  - "/media/cs533r/data_b/siren_results/3d/6_hidden_layers/1024/ninjago_city.ply"
+  - "/media/cs533r/data_b/siren_results/3d/6_hidden_layers/1024/oak_tree.ply"
+  - "/media/cs533r/data_b/siren_results/3d/6_hidden_layers/1024/thai_statue.ply"
+  siren_7_hidden_layers:
+  - "/media/cs533r/data_b/siren_results/3d/7_hidden_layers/1024/armadillo.ply"
+  - "/media/cs533r/data_b/siren_results/3d/7_hidden_layers/1024/asian_dragon.ply"
+#  - "/media/cs533r/data_b/siren_results/3d/7_hidden_layers/1024/at-ot.ply"
+  - "/media/cs533r/data_b/siren_results/3d/7_hidden_layers/1024/beard_man.ply"
+  - "/media/cs533r/data_b/siren_results/3d/7_hidden_layers/1024/camera.ply"
+  - "/media/cs533r/data_b/siren_results/3d/7_hidden_layers/1024/david.ply"
+  - "/media/cs533r/data_b/siren_results/3d/7_hidden_layers/1024/dragon.ply"
+  - "/media/cs533r/data_b/siren_results/3d/7_hidden_layers/1024/dragon_warrior.ply"
+  - "/media/cs533r/data_b/siren_results/3d/7_hidden_layers/1024/engine.ply"
+#  - "/media/cs533r/data_b/siren_results/3d/7_hidden_layers/1024/gear_shift.ply"
+  - "/media/cs533r/data_b/siren_results/3d/7_hidden_layers/1024/guangong.ply"
+  - "/media/cs533r/data_b/siren_results/3d/7_hidden_layers/1024/lion.ply"
+#  - "/media/cs533r/data_b/siren_results/3d/7_hidden_layers/1024/lunar_lander.ply"
+#  - "/media/cs533r/data_b/siren_results/3d/7_hidden_layers/1024/ninjago_city.ply"
+  - "/media/cs533r/data_b/siren_results/3d/7_hidden_layers/1024/oak_tree.ply"
+  - "/media/cs533r/data_b/siren_results/3d/7_hidden_layers/1024/thai_statue.ply"
+  siren_8_hidden_layers:
+  - "/media/cs533r/data_b/siren_results/3d/8_hidden_layers/1024/armadillo.ply"
+  - "/media/cs533r/data_b/siren_results/3d/8_hidden_layers/1024/asian_dragon.ply"
+#  - "/media/cs533r/data_b/siren_results/3d/8_hidden_layers/1024/at-ot.ply"
+  - "/media/cs533r/data_b/siren_results/3d/8_hidden_layers/1024/beard_man.ply"
+  - "/media/cs533r/data_b/siren_results/3d/8_hidden_layers/1024/camera.ply"
+  - "/media/cs533r/data_b/siren_results/3d/8_hidden_layers/1024/david.ply"
+  - "/media/cs533r/data_b/siren_results/3d/8_hidden_layers/1024/dragon.ply"
+  - "/media/cs533r/data_b/siren_results/3d/8_hidden_layers/1024/dragon_warrior.ply"
+  - "/media/cs533r/data_b/siren_results/3d/8_hidden_layers/1024/engine.ply"
+#  - "/media/cs533r/data_b/siren_results/3d/8_hidden_layers/1024/gear_shift.ply"
+  - "/media/cs533r/data_b/siren_results/3d/8_hidden_layers/1024/guangong.ply"
+  - "/media/cs533r/data_b/siren_results/3d/8_hidden_layers/1024/lion.ply"
+#  - "/media/cs533r/data_b/siren_results/3d/8_hidden_layers/1024/lunar_lander.ply"
+#  - "/media/cs533r/data_b/siren_results/3d/8_hidden_layers/1024/ninjago_city.ply"
+  - "/media/cs533r/data_b/siren_results/3d/8_hidden_layers/1024/oak_tree.ply"
+  - "/media/cs533r/data_b/siren_results/3d/8_hidden_layers/1024/thai_statue.ply"
+
+experiment_name: "siren_4_to_8_hidden_layers"
+
+normalize: False
+
+# chamfer/metro
+num_points_to_sample: 100000
+
+# chamfer
+metric: "l2"
+square_distances: False
+
+# f-score
+cube_side_length: 1.0
+cube_side_factor: 2000
+
+# iou
+scale: 1
