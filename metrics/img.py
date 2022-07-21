@@ -31,26 +31,28 @@ def compute_metric_2d(img_paths_gt, img_paths_pred_dict, grayscales, metric_name
         for img_path_gt, img_path_pred, is_gs in zip(
             img_paths_gt, img_paths_pred, grayscales):
             # for each gt-pred pair, compute the metric
-            im_gt_arr = np.array(Image.open(img_path_gt))
-            im_pred_arr = np.array(Image.open(img_path_pred))
-            metric = None
-            if is_gs:
-                if len(im_gt_arr.shape) == 3:
-                    im_gt_arr = im_gt_arr[:, :, 0]
-                if len(im_pred_arr.shape) == 3:
-                    im_pred_arr = im_pred_arr[:, :, 0]
-                if metric_name == "psnr":
-                    metric = metric_fn(im_gt_arr, im_pred_arr)
+            metric = -1
+            try:
+                im_gt_arr = np.array(Image.open(img_path_gt))
+                im_pred_arr = np.array(Image.open(img_path_pred))
+                if is_gs:
+                    if len(im_gt_arr.shape) == 3:
+                        im_gt_arr = im_gt_arr[:, :, 0]
+                    if len(im_pred_arr.shape) == 3:
+                        im_pred_arr = im_pred_arr[:, :, 0]
+                    if metric_name == "psnr":
+                        metric = metric_fn(im_gt_arr, im_pred_arr)
+                    else:
+                        metric = metric_fn(im_gt_arr, im_pred_arr, multichannel=False)
                 else:
-                    metric = metric_fn(im_gt_arr, im_pred_arr, multichannel=False)
-            else:
-                im_gt_arr = im_gt_arr[:, :, :3]
-                im_pred_arr = im_pred_arr[:, :, :3]
-                if metric_name == "psnr":
-                    metric = metric_fn(im_gt_arr, im_pred_arr)
-                else:
-                    metric = metric_fn(im_gt_arr, im_pred_arr, multichannel=True)
-            
+                    im_gt_arr = im_gt_arr[:, :, :3]
+                    im_pred_arr = im_pred_arr[:, :, :3]
+                    if metric_name == "psnr":
+                        metric = metric_fn(im_gt_arr, im_pred_arr)
+                    else:
+                        metric = metric_fn(im_gt_arr, im_pred_arr, multichannel=True)
+            except:
+                print(f"Calculate {metric_name} for {img_path_pred} failed")
             metrics[baseline].append(metric)
     
     return metrics
